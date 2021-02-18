@@ -1,9 +1,6 @@
 import React from 'react';
 
 class CommissionsPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
