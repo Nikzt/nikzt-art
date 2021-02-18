@@ -1,29 +1,46 @@
 import './scss/App.scss';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+import CommissionsPage from './Pages/CommissionsPage';
+import GalleryPage from './Pages/GalleryPage';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <h1 id="commissions">Commissions</h1>
-      <h2 id="character-art-full-body-35">Character Art (Full Body) - $35</h2>
-      <p>4 sketches of the head</p>
-      <p>2 sketches of body / outfit</p>
-      <p>1 full color drawing.</p>
-      <p>Add background: + $30</p>
-      <h2 id="character-art-profile-15">Character Art (Profile) $15</h2>
-      <p>4 sketches of the head</p>
-      <p>1 full color drawing of the head/shoulders</p>
-      <h2 id="storyboard-sketches-10">Storyboard Sketches - $10</h2>
-      <p>Rough sketch of a scene with 2 characters. </p>
-      <ul>
-        <li>+$2 for each additional character</li>
-      </ul>
-      <h2 id="full-scene-60">Full Scene - $60</h2>
-      <p>2 Characters and background with clean line art.</p>
-      <ul>
-        <li>+$40 for color</li>
-        <li>+$20 for each additional character</li>
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/commissions">Commissions</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Gallery</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/commissions">
+            <CommissionsPage />
+          </Route>
+          <Route path="/gallery">
+            <GalleryPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
