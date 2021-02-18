@@ -1,0 +1,11 @@
+@import "reset";
+@import "colors";
+
+html, body {
+    background-color: $bg;
+    color: $fg;
+}
+
+a {
+    color: $highlight1;
+}

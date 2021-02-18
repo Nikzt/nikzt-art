@@ -1,14 +1,9 @@
-import './scss/App.scss';
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import CommissionsPage from './Pages/CommissionsPage';
 import GalleryPage from './Pages/GalleryPage';
 import HomePage from './Pages/HomePage';
+import './index.css/app.css'
 
 function App() {
   return (
