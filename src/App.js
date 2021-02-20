@@ -4,25 +4,13 @@ import CommissionsPage from './Pages/CommissionsPage';
 import GalleryPage from './Pages/GalleryPage';
 import HomePage from './Pages/HomePage';
 import './index.css/app.css'
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/commissions">Commissions</Link>
-            </li>
-            <li>
-              <Link to="/gallery">Gallery</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Navbar />
         <Switch>
           <Route path="/commissions">
             <CommissionsPage />
