@@ -39,6 +39,7 @@ table {
 
 .navbar {
   background-color: #222222;
+  color: #cccccc;
   position: fixed;
   top: 0;
   padding: 10px;
@@ -46,13 +47,16 @@ table {
   height: 35px; }
   .navbar .hamburger-menu {
     display: none;
-    cursor: pointer; }
+    cursor: pointer;
+    float: right;
+    margin-right: 30px; }
     .navbar .hamburger-menu .hamburger-menu-icon {
       width: 35px;
       height: 35px; }
     .navbar .hamburger-menu:hover {
       color: #c96767; }
   .navbar .nikzt-logo {
+    cursor: pointer;
     float: left;
     font-family: Comfortaa;
     font-size: 2em;
@@ -65,14 +69,14 @@ table {
       margin-top: 4px;
       padding: 5px;
       cursor: pointer; }
-      .navbar .navbar-links li a {
+      .navbar .navbar-links li span {
         cursor: pointer;
         text-decoration: none;
         margin-left: 20px;
         font-size: 1em;
         position: relative;
         color: #cccccc; }
-        .navbar .navbar-links li a:after {
+        .navbar .navbar-links li span:after {
           position: absolute;
           height: 23px;
           width: 100%;
@@ -81,24 +85,76 @@ table {
           border-bottom: solid 2px #c96767;
           transform: scaleX(0);
           transition: transform 250ms ease-in-out; }
-        .navbar .navbar-links li a:hover, .navbar .navbar-links li a.on-link-page {
+        .navbar .navbar-links li span:hover, .navbar .navbar-links li span.on-link-page {
           text-decoration: none; }
-          .navbar .navbar-links li a:hover:after, .navbar .navbar-links li a.on-link-page:after {
+          .navbar .navbar-links li span:hover:after, .navbar .navbar-links li span.on-link-page:after {
             transform: scaleX(1); }
 
-.homepage .bio img {
-  width: 150px;
-  height: 150px; }
+/* When the screen is less than 600 pixels wide hide the links... */
+@media screen and (max-width: 600px) {
+  .navbar .navbar-links {
+    display: none; }
+  .navbar .hamburger-menu {
+    display: inline; } }
+
+/* ...Unless the navbar has the responsive class, which means that the menu
+   has been expanded, so we show the links vertically */
+@media screen and (max-width: 600px) {
+  .navbar .navbar-links.show-dropdown {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    background-color: #222222;
+    width: 100%;
+    font-size: 1.3em; }
+    .navbar .navbar-links.show-dropdown span {
+      display: block;
+      margin: 4px 40px 4px 4px;
+      padding: 4px; }
+      .navbar .navbar-links.show-dropdown span:after {
+        display: none; }
+      .navbar .navbar-links.show-dropdown span:hover, .navbar .navbar-links.show-dropdown span.on-link-page {
+        color: #c96767; }
+    .navbar .navbar-links.show-dropdown li {
+      float: none; } }
+
+.homepage .bio {
+  width: 300px;
+  height: 200px;
+  display: block;
+  background-color: #222222; }
+  .homepage .bio img {
+    width: 150px;
+    height: 150px; }
 
 html,
 body {
-  background-color: #222222;
-  color: #cccccc;
+  background-color: #cccccc;
+  color: #222222;
   font-family: "Nunito", sans-serif;
   margin-top: 30px; }
+  html .content-block,
+  body .content-block {
+    background-color: #222222;
+    color: #cccccc;
+    margin: 10px;
+    padding: 10px; }
+
+h1 {
+  font-size: 1.9em;
+  text-align: center; }
 
 h2 {
   font-size: 1.5em; }
 
 .highlight-text {
   color: #c96767; }
+
+.unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none; }

@@ -12,10 +12,22 @@
 
 html,
 body {
-    background-color: $bg;
-    color: $fg;
+    background-color: $fg;
+    color: $bg;
     font-family: "Nunito", sans-serif;
     margin-top: 30px;
+
+    .content-block {
+        background-color: $bg;
+        color: $fg;
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+h1 {
+    font-size: 1.9em;
+    text-align: center;
 }
 
 h2 {
@@ -24,4 +36,12 @@ h2 {
 
 .highlight-text {
     color: $highlight1;
+}
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }

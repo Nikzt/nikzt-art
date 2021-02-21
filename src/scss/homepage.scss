@@ -1,9 +1,12 @@
 .homepage {
     .bio {
+        width: 300px;
+        height: 200px;
+        display: block;
+        background-color: $bg;
         img {
             width: 150px;
             height: 150px;
         }
-
     }
 }

@@ -1,5 +1,6 @@
 .navbar {
     background-color: $bg;
+    color: $fg;
 
     // Navbar should always appear at the top of the page
     position: fixed;
@@ -11,6 +12,8 @@
     .hamburger-menu {
         display: none;
         cursor: pointer;
+        float: right;
+        margin-right: 30px;
 
         .hamburger-menu-icon {
             width: 35px;
@@ -23,6 +26,7 @@
     }
 
     .nikzt-logo {
+        cursor: pointer;
         float: left;
         font-family: Comfortaa;
         font-size: 2em;
@@ -38,7 +42,7 @@
             padding: 5px;
             cursor: pointer;
 
-            a {
+            span {
                 cursor: pointer;
                 text-decoration: none;
                 margin-left: 20px;
@@ -68,6 +72,47 @@
                     }
                 }
             }
+        }
+    }
+}
+
+/* When the screen is less than 600 pixels wide hide the links... */
+@media screen and (max-width: 600px) {
+    .navbar .navbar-links {
+        display: none;
+    }
+    .navbar .hamburger-menu {
+        display: inline;
+    }
+}
+/* ...Unless the navbar has the responsive class, which means that the menu
+   has been expanded, so we show the links vertically */
+@media screen and (max-width: 600px) {
+    .navbar .navbar-links.show-dropdown {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+
+        top: 55px;
+        left: 0px;
+        background-color: $bg;
+        width: 100%;
+        font-size: 1.3em;
+
+        span {
+            display: block;
+            margin: 4px 40px 4px 4px;
+            padding: 4px;
+            &:after {
+                display: none;
+            }
+            &:hover,
+            &.on-link-page {
+                color: $highlight1;
+            }
+        }
+        li {
+            float: none;
         }
     }
 }

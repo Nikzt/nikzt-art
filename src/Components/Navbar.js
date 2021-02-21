@@ -1,30 +1,59 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useCallback } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { Menu } from '@material-ui/icons'
 
-const Navbar = (props) => {
+const Navbar = () => {
     const currentPath = useLocation().pathname;
+    const [showDropdown, setShowDropdown] = useState(false);
+    const history = useHistory();
+
+    const onMenuButtonClick = () => {
+        setShowDropdown(!showDropdown);
+    }
+
+    const getClassName = (path) => {
+        return currentPath === path ? "on-link-page" : "";
+    }
+    const handleHomeClick = useCallback(() => {
+        history.push('/');
+        setShowDropdown(false);
+    }, [history]);
+    const handleCommissionsClick = useCallback(() => {
+        history.push('/commissions');
+        setShowDropdown(false);
+    }, [history]);
+    const handleGalleryClick = useCallback(() => {
+        history.push('/gallery');
+        setShowDropdown(false);
+    }, [history]);
+
     return (
-        <nav className="navbar">
-            <div className="nikzt-logo">
+        <nav className="navbar unselectable">
+            <div className="nikzt-logo"
+                onClick={handleHomeClick}>
                 nikzt.<span className="highlight-text">art</span>
             </div>
-            <ul className="navbar-links">
-                <li>
-                    <Link to="/" className={currentPath === "/" && "on-link-page"}>
+            <ul className={`${showDropdown ? "show-dropdown" : ""} navbar-links`}>
+                <li onClick={handleHomeClick}>
+                    <span className={getClassName("/")}>
                         Home
-                    </Link>
+                    </span>
                 </li>
-                <li>
-                    <Link to="/commissions" className={currentPath === "/commissions" && "on-link-page"}>
+
+                <li onClick={handleCommissionsClick}>
+                    <span className={getClassName("/commissions")}>
                         Commissions
-                    </Link>
+                    </span>
                 </li>
-                <li>
-                    <Link to="/gallery" className={currentPath === "/gallery" && "on-link-page"}>
+                <li onClick={handleGalleryClick}>
+                    <span className={getClassName("/gallery")}>
                         Gallery
-                    </Link>
+                    </span>
                 </li>
             </ul>
+            <span className="hamburger-menu" onClick={onMenuButtonClick}>
+                <Menu className="hamburger-menu-icon" />
+            </span>
         </nav>
     )
 }
