@@ -4,14 +4,15 @@
     // Navbar should always appear at the top of the page
     position: fixed;
     top: 0;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
-    height: 60px;
+    height: 35px;
 
     .nikzt-logo {
         float: left;
         font-family: Comfortaa;
         font-size: 2em;
+        margin-top: 1px;
     }
 
     .navbar-links {
@@ -19,20 +20,22 @@
         float: right;
         li {
             float: right;
+            margin-top: 4px;
+            padding: 5px;
+            cursor: pointer;
 
             a {
                 cursor: pointer;
                 text-decoration: none;
                 margin-left: 20px;
                 font-size: 1em;
-                padding-bottom: 3px;
                 position: relative;
                 color: $fg;
 
                 // Bottom border expands on hover
                 &:after {
                     position: absolute;
-                    height: 30px;
+                    height: 23px;
                     width: 100%;
                     right: 0px;
                     content: "";
@@ -42,7 +45,7 @@
                     transition: transform 250ms ease-in-out;
                 }
 
-                &:hover {
+                &:hover, &.on-link-page {
                     text-decoration: none;
 
                     &:after {

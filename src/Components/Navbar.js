@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = (props) => {
+    const currentPath = useLocation().pathname;
     return (
         <nav className="navbar">
             <div className="nikzt-logo">
@@ -9,13 +11,19 @@ const Navbar = (props) => {
             </div>
             <ul className="navbar-links">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" className={currentPath === "/" && "on-link-page"}>
+                        Home
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/commissions">Commissions</Link>
+                    <Link to="/commissions" className={currentPath === "/commissions" && "on-link-page"}>
+                        Commissions
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/gallery">Gallery</Link>
+                    <Link to="/gallery" className={currentPath === "/gallery" && "on-link-page"}>
+                        Gallery
+                    </Link>
                 </li>
             </ul>
         </nav>
