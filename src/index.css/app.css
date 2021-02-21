@@ -83,3 +83,7 @@ body {
 
 .highlight-text {
   color: #c96767; }
+
+img {
+  width: 400px;
+  height: 400px; }
