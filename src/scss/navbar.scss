@@ -8,6 +8,20 @@
     width: 100%;
     height: 35px;
 
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+
+        .hamburger-menu-icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover {
+            color: $highlight1;
+        }
+    }
+
     .nikzt-logo {
         float: left;
         font-family: Comfortaa;
@@ -45,7 +59,8 @@
                     transition: transform 250ms ease-in-out;
                 }
 
-                &:hover, &.on-link-page {
+                &:hover,
+                &.on-link-page {
                     text-decoration: none;
 
                     &:after {

@@ -44,6 +44,14 @@ table {
   padding: 10px;
   width: 100%;
   height: 35px; }
+  .navbar .hamburger-menu {
+    display: none;
+    cursor: pointer; }
+    .navbar .hamburger-menu .hamburger-menu-icon {
+      width: 35px;
+      height: 35px; }
+    .navbar .hamburger-menu:hover {
+      color: #c96767; }
   .navbar .nikzt-logo {
     float: left;
     font-family: Comfortaa;
@@ -78,6 +86,10 @@ table {
           .navbar .navbar-links li a:hover:after, .navbar .navbar-links li a.on-link-page:after {
             transform: scaleX(1); }
 
+.homepage .bio img {
+  width: 150px;
+  height: 150px; }
+
 html,
 body {
   background-color: #222222;
@@ -85,9 +97,8 @@ body {
   font-family: "Nunito", sans-serif;
   margin-top: 30px; }
 
+h2 {
+  font-size: 1.5em; }
+
 .highlight-text {
   color: #c96767; }
-
-img {
-  width: 150px;
-  height: 150px; }
