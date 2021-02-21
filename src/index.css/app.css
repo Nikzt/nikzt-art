@@ -129,10 +129,13 @@ table {
     width: 150px;
     height: 150px; }
 
+.commissions-page .hire-me {
+  text-align: center; }
+
 html,
 body {
-  background-color: #cccccc;
-  color: #222222;
+  background-color: #e6dddd;
+  color: #423939;
   font-family: "Nunito", sans-serif;
   margin-top: 30px; }
   html .content-block,
@@ -148,6 +151,13 @@ h1 {
 
 h2 {
   font-size: 1.5em; }
+
+.page {
+  max-width: 1000px;
+  width: 80%;
+  min-width: 280px;
+  margin: 0 auto 0 auto;
+  padding-top: 15px; }
 
 .highlight-text {
   color: #c96767; }

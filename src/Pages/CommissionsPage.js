@@ -2,9 +2,9 @@ import React from 'react';
 
 const CommissionsPage = () => {
     return (
-        <div className="commissions-page">
+        <div className="commissions-page page">
             <h1>Commissions</h1>
-            <p>Hire me to draw you something!</p>
+            <p className="hire-me">Hire me to draw you something!</p>
             <div className="content-block">
             <h2>Character Art (Full Body) - $35</h2>
 

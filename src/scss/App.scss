@@ -1,4 +1,5 @@
 @import "reset";
+
 // vars
 @import "colors";
 
@@ -9,11 +10,12 @@
 // components/pages
 @import "navbar";
 @import "homepage";
+@import "commissionspage";
 
 html,
 body {
-    background-color: $fg;
-    color: $bg;
+    background-color: $bg-light;
+    color: $fg-light;
     font-family: "Nunito", sans-serif;
     margin-top: 30px;
 
@@ -32,6 +34,14 @@ h1 {
 
 h2 {
     font-size: 1.5em;
+}
+
+.page {
+    max-width: 1000px;
+    width: 80%;
+    min-width: 280px;
+    margin: 0 auto 0 auto;
+    padding-top: 15px;
 }
 
 .highlight-text {
