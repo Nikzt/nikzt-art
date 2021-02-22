@@ -132,6 +132,11 @@ table {
 .commissions-page .hire-me {
   text-align: center; }
 
+.gallery-page img {
+  display: block;
+  margin: 30px auto 0 auto;
+  height: 500px; }
+
 html,
 body {
   background-color: #e6e6e6;
